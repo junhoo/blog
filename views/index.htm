@@ -1,0 +1,12 @@
+<% include common/header.htm %>
+
+<script type="text/javascript" src="../app.js">	
+</script>
+<script type="text/javascript">
+	var socket = io.connect();
+	socket.on('message', function (time) {
+		document.getElementsByClassName('time').innerHTML = time;
+	})
+</script>
+
+<% include common/footer.htm %>

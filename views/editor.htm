@@ -1,0 +1,35 @@
+<% include common/header.htm %>
+<div class="container ">
+	<div class="col-md-8">
+		<form method="post">
+			标题<br>
+			<input type="text" name="title" id="title" value="<%=view.title%>"><br> 内容
+			<br>
+			<textarea name="content" id="content">
+    	<%=view.content%>
+    </textarea><br>
+			<button onClick="potsData(); return false;">修改</button>
+		</form>
+	</div>
+</div>
+<script type="text/javascript">
+	function potsData() {
+		console.log('ok');
+
+		$.post('/list/<%=view._id %>/editor', {
+			_id: '<%=view._id %>',
+			title: $('#title').val(),
+			content: $('#content').val()
+		}, function(data) {
+
+			if(data.status) {
+				alert(data.msg);
+			} else {
+				window.location = '/list';
+				alert(data.msg);
+			}
+		});
+
+	}
+</script>
+<% include common/footer.htm %>

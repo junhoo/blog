@@ -1,0 +1,30 @@
+<% include common/header.htm %>
+<div class="container ">
+	<div class="col-md-8">
+		<table class="table .table-striped">
+
+			<tr>
+				<th>_id</th>
+				<th>用户名</th>
+				<th>密码</th>
+				<th>修改</th>
+			</tr>
+
+			<tr>
+				<td>
+					<%=user._id%>
+				</td>
+				<td>
+					<%=user.name%>
+				</td>
+				<td>
+					<%=user.password%>
+				</td>
+				<td>
+					<a href="/user/<%=user._id%>/editor">更改</a>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<% include common/footer.htm %>

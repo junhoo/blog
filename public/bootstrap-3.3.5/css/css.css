@@ -1,0 +1,11 @@
+
+
+.comWidth{ 
+	width: 1000px; margin: 0 auto;  position: relative;
+	}
+
+.leftArea{float: left;}
+
+.rightArea{	float: right;}
+
+.comWidth a:hover{color: orange;}

@@ -1,0 +1,41 @@
+<% include common/header.htm %>
+<div class="container ">
+	<div class="col-md-8">
+		<table class="table">
+			<tr>
+				<th>_id</th>
+				<th>作者</th>
+				<th>标题</th>
+				<th>内容</th>
+				<th>修改</th>
+			</tr>
+
+			<% list.forEach(function( list ){ %>
+
+			<tr>
+				<td>
+					<%=list._id%>
+				</td>
+				<td>
+					<a href="/user/<%=list.author._id%>">
+						<%=list.author.name%>
+					</a>
+				</td>
+				<td>
+					<a href="/view/<%=list._id%>">
+						<%=list.title%>
+					</a>
+				</td>
+				<td>
+					<%=list.content%>
+				</td>
+				<td>
+					<a href="/list/<%=list._id%>/editor">更改</a>
+				</td>
+			</tr>
+			<% }); %>
+
+		</table>
+	</div>
+</div>
+<% include common/footer.htm %>
