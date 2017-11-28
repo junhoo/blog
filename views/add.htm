@@ -1,16 +1,35 @@
 <% include common/header.htm %>
-<div class="container ">
-<div class="col-md-8">
-<h1><%=title%></h1>
-<form method="post" action="/add">
-	<h2>标题</h2>
-	<input type="text" placeholder="标题" value="" name="title"><br>
-    <h2>内容</h2>
-    <textarea rows="3" name="content" placeholder="内容">
-    
-    </textarea><br>
-    <input class="btn btn-large btn-primary" type="submit" value="发布微博">
-</form>
-</div>
-</div>
+    <div class="container ">
+        <div class="col-md-8">
+            <h1>
+                <!-- <%=title%> -->
+            </h1>
+            <form method="post" action="/add" class="bs-example bs-example-form" role="form">
+                <div class="row">
+
+                    <div class="input-group input-group-lg">
+                        <!-- <h2>标题</h2> -->
+                        <span class="input-group-addon">标题</span>
+                        <!-- <input type="text" placeholder="" value="" name="title"> -->
+                        <input type="text" class="form-control" placeholder="" name="title">
+                        <!-- <br> -->
+                    </div>
+                
+                    <div class="input-group input-group-lg">
+                        <!-- <h2>内容</h2> -->
+                        <span class="input-group-addon">内容</span>
+                        <!-- <textarea rows="6" name="content" placeholder=""></textarea> -->
+                        <input type="text" class="form-control" placeholder="" name="content">
+                        <!-- <br> -->
+                    </div>
+
+                    <div>
+                        <input class="btn btn-default btn-lg" type="submit" value="发布微博">
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+    </div>
 <% include common/footer.htm %>
