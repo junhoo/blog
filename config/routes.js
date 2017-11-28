@@ -12,15 +12,17 @@ module.exports = function (app) {
 		} else {
 			app.locals.user = user;
 		};
+		
 		next();
 	});
 
-	// app.get('/', function (req, res, next) {
-	// 	res.render('index', { title: '博客' });
-	// });
+
+	app.get('/', function (req, res, next){
+		res.render('index', { title: '首页' });
+	});
 
 	//首页
-	app.get('/home', PluginUser.loginNo, PluginBlog.home.get);
+	app.get('/home', PluginBlog.home.get);
 
 	//登录
 	app.get('/login', PluginUser.loginNo, PluginUser.login.get);

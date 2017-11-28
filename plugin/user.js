@@ -87,13 +87,10 @@ module.exports.reg = {
 						res.send(resJson);
 					}
 					if(data) {
-						//可以直接跳转首页
-						//					req.session.user = data;
-
-						res.redirect('/login');
-						//					resJson.msg = '注册成功';
-						//					resJson.status = true;
-						//					res.send(resJson);
+						req.session.user = data;
+						resJson.msg = '注册成功';
+						resJson.status = true;
+						res.send(resJson);
 					}
 				});
 

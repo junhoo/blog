@@ -1,115 +1,78 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="zh-CN">
 
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>
-			<%=title%>
-		</title>
-		<!-- 新 Bootstrap 核心 CSS 文件 -->
-		<link rel="stylesheet" href="/bootstrap-3.3.5/css/bootstrap.min.css">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+		<%=title%>
+	</title>
+	
+	<link rel="stylesheet" href="/bootstrap-3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/bootstrap-3.3.5/css/bootstrap-theme.min.css">
 
-		<!-- 可选的Bootstrap主题文件（一般不用引入） -->
-		<link rel="stylesheet" href="/bootstrap-3.3.5/css/bootstrap-theme.min.css">
+	<script src="/js/jquery.min.js"></script>
+	<script src="/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 
-		<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-		<script src="/js/jquery.min.js"></script>
+	<style type="text/css"></style>
+</head>
 
-		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-		<script src="/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-		<style type="text/css"></style>
-	</head>
+<body>
+	<div class="container">
+		<nav class="nav .nav-tabs">
 
-	<body>
-		<!--<div class="heard">
-			<div class="">
-				<div class="">
+			<div class="navbar navbar-inverse container-fluid">
+				<div class="comWidth">
 					
-				</div>
-				
-			</div>
-			
-		</div>-->
-		<div class="container">
-			<nav class="nav .nav-tabs">
-
-				<div class="navbar navbar-inverse container-fluid">
-					<div class="comWidth">
-						<!-- Brand and toggle get grouped for better mobile display -->
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-9" aria-expanded="false"> 
-								<!-- <span class="sr-only">Toggle navigation</span> 
-								<span class="icon-bar"></span> 
-								<span class="icon-bar">
-								</span> <span class="icon-bar"></span>  -->
-							</button>
-							<a class="navbar-brand glyphicon glyphicon-home" href="/home"></a>
-						</div>
-
-						<!-- Collect the nav links, forms, and other content for toggling -->
-						<!--    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">-->
-						<!--      <div class="nav navbar-nav">-->
-						<!-- <div class="navbar-header leftArea">
-							<a class="navbar-brand" href="/home">首页</a>
-						</div> -->
-						<% if (user) { %>
-						<!-- <div class="navbar-header rightArea">
-							<a class="navbar-brand" href="/add">发表</a>
-						</div>
-						<div class="navbar-header rightArea">
-							<a class="navbar-brand" href="/list">列表</a>
-						</div>
-						<div class="navbar-header rightArea">
-							<a class="navbar-brand" href="/user/<%=user._id%>">
-								用户:<%=user.name%>
-							</a>
-						</div>
-						<div class="navbar-header rightArea">
-							<a class="navbar-brand" href="/logout">退出</a>
-						</div> -->
-
-
-						<ul class="nav navbar-nav navbar-right">
-							<li>
-								<a href="/add">
-									<span class="glyphicon glyphicon-edit"></span> 发表</a>
-							</li>
-							<li>
-								<a href="/list">
-									<span class="glyphicon glyphicon-list-alt"></span> 列表</a>
-							</li>
-							<li>
-								<a href="/user/
-								<%=user._id%>">
-									<span class="glyphicon glyphicon-user"></span> 用户</a>
-							</li>
-							<li>
-								<a href="/logout">
-									<span class="glyphicon glyphicon-share"></span> 退出</a>
-							</li>
-						</ul>
-
-						<% } else { %>
-						<ul class="nav navbar-nav navbar-right">
-							<li>
-								<a href="/reg">
-									<span class="glyphicon glyphicon-user"></span> 注册</a>
-							</li>
-							<li>
-								<a href="/login">
-									<span class="glyphicon glyphicon-log-in"></span> 登录</a>
-							</li>
-						</ul>
-						<% } %>
-						<!--      </div>-->
-						<!--    </div>-->
-						<!-- /.navbar-collapse -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-9"
+						 aria-expanded="false">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar">
+							</span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand glyphicon glyphicon-home" href="/home">首页</a>
 					</div>
-					<!-- /.container-fluid -->
-				</div>
-			</nav>
-		</div>
 
-		
+					<div class="navbar-header leftArea">
+						<a class="navbar-brand" href="/"></a>
+					</div>
+
+					<% if (user) { %>
+
+						<ul class="nav navbar-nav navbar-right">
+							<li>
+								<a href="/add"><span class="glyphicon glyphicon-edit"></span>发表</a>
+							</li>
+							<li>
+								<a href="/list"><span class="glyphicon glyphicon-list-alt"></span>列表</a>
+							</li>
+							<li>
+								<a href="/user/<%=user._id%>" <span class="glyphicon glyphicon-user"></span><%=user.name%>
+								</a>
+							</li>
+							<li>
+								<a href="/logout"><span class="glyphicon glyphicon-share"></span>退出</a>
+							</li>
+						</ul>
+
+					<% } else { %>
+
+						<ul class="nav navbar-nav navbar-right">
+							<li>
+								<a href="/reg"><span class="glyphicon glyphicon-user"></span> 注册</a>
+							</li>
+							<li>
+								<a href="/login"><span class="glyphicon glyphicon-log-in"></span> 登录</a>
+							</li>
+						</ul>
+
+					<% } %>
+				</div>
+			</div>
+		</nav>
+	</div>
+</body>
