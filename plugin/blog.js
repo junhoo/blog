@@ -1,5 +1,25 @@
 var ModelBolg = require('../model/blog');
 
+//微博列表
+module.exports.home = {
+	get: function (req, res, next) {
+
+		var aList = ModelBolg.find({}, null, {
+			sort: {
+			}
+		}).populate('user');
+
+		aList.exec(function (err, data) {
+			if (err) console.log(err);
+			res.render('home', {
+				title: '微博列表',
+				list: data
+			});
+
+		});
+	}
+};
+
 //微博发表
 module.exports.add = {
 	get: function(req, res, next) {

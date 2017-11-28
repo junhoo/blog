@@ -3,19 +3,18 @@
 	<div class="col-md-8">
 		<table class="table">
 			<tr>
-				<th>_id</th>
+				<!-- <th>_id</th> -->
 				<th>标题</th>
 				<th>内容</th>
 				<th>作者</th>
-				<th>修改</th>
 			</tr>
 
 			<% list.forEach(function( list ){ %>
 
 			<tr>
-				<td>
+				<!-- <td>
 					<%=list._id%>
-				</td>
+				</td> -->
 				<td>
 					<a href="/view/<%=list._id%>">
 						<%=list.title%>
@@ -28,9 +27,6 @@
 					<a href="/user/<%=list.author._id%>">
 						<%=list.author.name%>
 					</a>
-				</td>
-				<td>
-					<a href="/list/<%=list._id%>/editor">更改</a>
 				</td>
 			</tr>
 			<% }); %>
